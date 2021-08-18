@@ -97,6 +97,10 @@ const carInfo = {
 var name = "Biden";
 var getCarName = carInfo.getName;
 console.log(getCarName());
+// Solution: Biden
+/**
+ * Explanation: The getName function is not binded to the carInfo object(carInfo.getName.bind(carInfo) or carInfo.getName()). Hence the getCarName is refering to the this value which is now in global scope/window scope. In window scope, the value of name is Biden and hence is the result.
+ */
 
 // 7.Hoisting
 console.log(a);
