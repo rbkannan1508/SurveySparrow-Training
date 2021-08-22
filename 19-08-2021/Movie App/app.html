@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie App</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
+</head>
+<body>
+  <header><a href="#"><h1>Movies and Rating App</h1></a></header>
+  <div id="main">
+    <!-- <button id="editMovie" style="display: none;" onclick="editMovie(event)">Edit</button>
+    <button id="deleteMovie" style="display: none;" onclick="deleteMovie(event)">Delete</button> -->
+  </div>
+  <div id="submain">
+    <!-- <button id="editMovieSub" style="display: none;" onclick="editMovie(event)">Edit</button>
+    <button id="deleteMovieSub" style="display: none;" onclick="deleteMovie(event)">Delete</button> -->
+  </div>
+  
+  <div style="text-align:center;"><button class="addNewMovie" id="addNewMovie">Add New Movie</button></div>
+  
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span class="close" id="close">&times;</span>
+      <form id="addMovieForm" class="form-container">
+        <h1>Add New Movie</h1>
+        <br><br>
+        <label for="movieName"><b>Movie Name</b></label>
+        <input type="text" id="movieName" placeholder="Enter Movie Name" tabindex="0">
+        <br><br>
+        <label for="releaseDate"><b>Release Date</b></label>
+        <input type="date" id="releaseDate">
+        <br><br>
+        <label for="rating"><b>Choose a Rating:</b></label>
+
+        <select name="rating" id="rating">
+          <option value="" disabled selected>Select your option</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <div style="text-align:center;">
+          <button type="submit" class="addNewMovie" id="submitNewMovie">Submit</button>
+        </div>
+      </form>
+  </div>
+  </div>
+
+  <div id="updateModal" class="modal">
+    <div class="update-modal-content">
+      <span class="close" id="close">&times;</span>
+      <form id="updateMovieForm" class="form-container">
+        <h1>Add New Movie</h1>
+        <br><br>
+        <label for="updateID"><b>Movie ID</b></label>
+        <input type="text" id="updateID">
+        <br><br>
+        <label for="updateMovieName"><b>Movie Name</b></label>
+        <input type="text" id="updateMovieName" placeholder="Enter Movie Name" tabindex="0">
+        <br><br>
+        <label for="updateReleaseDate"><b>Release Date</b></label>
+        <input type="date" id="updateReleaseDate">
+        <br><br>
+        <label for="updateRating"><b>Choose a Rating:</b></label>
+
+        <select name="updateRating" id="updateRating">
+          <option value="" disabled selected>Select your option</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+        </select>
+        <div style="text-align:center;">
+          <button type="submit" class="addNewMovie" id="submitNewMovie">Submit</button>
+        </div>
+      </form>
+  </div>
+  </div>
+</body>
+</html>
