@@ -2,6 +2,7 @@
 
 const Hapi = require('hapi');
 const { Client } = require('pg');
+const Joi = require('joi');
 
 const server = new Hapi.Server();
 
@@ -33,6 +34,38 @@ server.route({
     }
 });
 
+server.route({
+    method:'GET',
+    path: '/hapi/{account}',
+    handler: function (request, response) {
+        var account = {};
+        if(request.params.account === 'bharathi') {
+            account.name = 'Bharathi Kannan';
+            account.occupation = 'Web Dev';
+            account.place = 'Chennai';
+        }
+        return response(account);
+    }
+});
+
+server.route({
+    method:'POST',
+    path: '/hapipost',
+    // config: {
+    //     validate: {
+    //         payload:
+    //             Joi.object({
+    //                 name: Joi.string().required(),
+    //                 works_on: Joi.string().required(),
+    //                 timestamp: Joi.any().forbidden().default((new Date).getTime())
+    //             })
+    //         }
+    //     },
+    handler: function (request, response) {
+        return response(request.payload);
+    }
+});
+
 const client = new Client({
     user: 'bharathikannan',
     host: 'localhost',
@@ -53,5 +86,5 @@ client.query('SELECT * FROM addresses', function(err, res) {
     }
     console.log('Response', res.rows);
     client.end();
-    process.exit(1);
+    // process.exit(1);
 });
