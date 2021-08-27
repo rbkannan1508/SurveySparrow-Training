@@ -1,2 +1,2 @@
 # SurveySparrow-Training
-Files, Submissions, Links of Training contents and Task contents from SurveySparrow 
+Submissions, Links of Task contents from SurveySparrow Training
