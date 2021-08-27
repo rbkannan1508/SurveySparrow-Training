@@ -2,7 +2,7 @@
 
 const Hapi = require('hapi');
 const { Client } = require('pg');
-const Joi = require('joi');
+// const Joi = require('joi');
 
 const server = new Hapi.Server();
 
@@ -85,6 +85,19 @@ client.query('SELECT * FROM addresses', function(err, res) {
         console.error('Table Connection Error');
     }
     console.log('Response', res.rows);
-    client.end();
-    // process.exit(1);
+});
+
+server.route({
+    method: 'GET',
+    path: '/getaddress',
+    handler: function(request, response) {
+        client.query('SELECT * FROM addresses', function(err, res) {
+            if(err) {
+                console.error('Table Connection Error', err);
+            }
+            response(res.rows);
+            client.end();
+            // process.exit(1);
+        });
+    }
 });
